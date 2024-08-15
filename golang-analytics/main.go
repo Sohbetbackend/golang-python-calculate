@@ -15,33 +15,31 @@ type School struct {
 	Areas  map[string]map[string]float64
 }
 
-var Settings = map[string]School{
-	"default": {
-		Grades: map[string]float64{
-			"5/5": 9,
-			"5":   7,
-			"4":   3,
-			"3":   1,
-			"2":   0,
-			"gm":  0,
+var Settings = School{
+	Grades: map[string]float64{
+		"5/5": 9,
+		"5":   7,
+		"4":   3,
+		"3":   1,
+		"2":   0,
+		"gm":  0,
+	},
+	Areas: map[string]map[string]float64{
+		"tebigy": {
+			Astronomy: 20,
+			Chemistry: 25,
+			Biology:   45,
+			Physics:   50,
 		},
-		Areas: map[string]map[string]float64{
-			"tebigy": {
-				Astronomy: 20,
-				Chemistry: 25,
-				Biology:   45,
-				Physics:   50,
-			},
-			"takyk": {
-				Math:        60,
-				Informatics: 40,
-				Geometry:    50,
-			},
-			"ynsanperwer": {
-				English:    25,
-				History:    30,
-				Literature: 35,
-			},
+		"takyk": {
+			Math:        60,
+			Informatics: 40,
+			Geometry:    50,
+		},
+		"ynsanperwer": {
+			English:    25,
+			History:    30,
+			Literature: 35,
 		},
 	},
 }
@@ -73,7 +71,7 @@ var Subjects = []string{
 }
 
 func getSchool() School {
-	return Settings["default"]
+	return Settings
 }
 
 func getInput(school School) Input {
